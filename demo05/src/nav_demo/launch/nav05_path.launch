@@ -1,0 +1,13 @@
+<launch>
+    <!-- respawn 为 false，意味着该节点关闭后，不会被重启 -->
+    <!-- clear_params 为 true，意味着每次启动该节点都要清空私有参数然后重新载入 -->
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
+
+        <!-- 通过 rosparam 会载入若干 yaml 文件用于配置参数 -->
+        <rosparam file="$(find nav_demo)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find nav_demo)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find nav_demo)/param/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find nav_demo)/param/global_costmap_params.yaml" command="load" />
+        <rosparam file="$(find nav_demo)/param/base_local_planner_params.yaml" command="load" />
+    </node>
+</launch>

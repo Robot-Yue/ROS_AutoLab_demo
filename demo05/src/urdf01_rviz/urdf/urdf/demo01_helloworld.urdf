@@ -1,0 +1,18 @@
+<robot name = "mycar">
+    <link name = "base_link">
+        <visual>
+            <geometry>
+                <!-- <box size = "0.3 0.2 0.1" /> -->
+                <!-- <cylinder radius = "0.5" length = "0.1" /> -->
+                <!-- <sphere radius = "0.3" /> -->
+                <mesh filename = "package://urdf01_rviz/meshes/autolabor_mini.stl" />
+            </geometry>
+            <!-- xyz 坐标 rpy 翻滚俯仰与偏航角度(3.14 = 180度 1.57 = 90度) -->
+            <origin xyz = "0 0 0" rpy = "1.57 0 1.57" />
+            <!-- 颜色: r = red g = green b = blue a = alpha -->
+            <material name = "car_color">
+                <color rgba = "0 1 0 0.5" />
+            </material>
+        </visual>
+    </link>
+</robot>
